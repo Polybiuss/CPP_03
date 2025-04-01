@@ -40,8 +40,24 @@ int ClapTrap::getAttackDamage(void)const {
 	return this->_attackDamage;
 }
 
+void ClapTrap::setHitPoint(int hp){
+	_hitPoint = hp;
+}
+
+void ClapTrap::setEnergyPoint(int ep){
+	_energyPoint = ep;
+}
+
+void ClapTrap::setAttackDamage(int ad){
+	_attackDamage = ad;
+}
+
 std::string ClapTrap::getName(void)const {
 	return this->_name;
+}
+
+void ClapTrap::setName(std::string name){
+	_name = name;
 }
 
 void	ClapTrap::attack(std::string const & target){
@@ -70,7 +86,7 @@ void	ClapTrap::beRepaired(unsigned int amount){
 	if (_hitPoint <= 0)
 		std::cout << "Claptrap " << _name << "can't be repared, is alredy dead" << std::endl;
 	else if (_energyPoint > 0){
-		std::cout << "Claptrap " << _name << "repair himself" << amount << " of health" << std::endl;
+		std::cout << "Claptrap " << _name << " repair himself" << amount << " of health" << std::endl;
 		--_energyPoint;
 		_hitPoint += amount;
 	}
