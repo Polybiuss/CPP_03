@@ -1,23 +1,23 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void){
+ClapTrap::ClapTrap(void): _hitPoint(10), _energyPoint(10), _attackDamage(10), _name("default_calptrap"){
 	std::cout << "Default constructor claptrap called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name): _name(name){
-	_hitPoint = 10;
-	_attackDamage = 0;
-	_energyPoint = 10;
+ClapTrap::ClapTrap(std::string name): _hitPoint(10), _energyPoint(10), _attackDamage(10), _name(name){
 	std::cout << "String constructor claptrap called" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const & cp){
+	this->_name = cp.getName();
+	this->_hitPoint = cp.getHitPoint();
+	this->_energyPoint = cp.getEnergyPoint();
+	this->_attackDamage = cp.getAttackDamage();
 	std::cout << "Copy constructor calptrap called" << std::endl;
-	*this = cp;
 }
 
 ClapTrap::~ClapTrap(void){
-	std::cout << "Destructor claptrap called" << std::endl;
+	std::cout << "default destructor claptrap called" << std::endl;
 }
 
 ClapTrap&	ClapTrap::operator=(ClapTrap const & cp){

@@ -1,6 +1,6 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(void): ClapTrap(){
+FragTrap::FragTrap(void){
 	setHitPoint(100);
 	setEnergyPoint(100);
 	setAttackDamage(30);
@@ -16,7 +16,10 @@ FragTrap::FragTrap(std::string name): ClapTrap(name){
 
 FragTrap::FragTrap(FragTrap const & ft){
 	std::cout << "Copy constructor Fragtrap called" << std::endl;
-	*this = ft;
+	this->setName(ft.getName());
+	this->setHitPoint(ft.getHitPoint());
+	this->setEnergyPoint(ft.getEnergyPoint());
+	this->setAttackDamage(ft.getAttackDamage());
 }
 
 FragTrap::~FragTrap(void){

@@ -2,14 +2,12 @@
 #include "ScavTrap.hpp"
 
 int main(void){
-	ScavTrap s1("jojo");
-	// ClapTrap c1("toto");
+	ScavTrap s1("bob");
 	s1.guardGate();
 	s1.attack("toto");
-	// ScavTrap sp("jojo");
-	// sp.takeDamage(100);
-	// ScavTrap s1(sp);
-	// s1 = sp;
-	// s1.beRepaired(1);
+	ScavTrap s2 = s1;
+	s2.attack("toto");
+	s2.takeDamage(100);
+	s2.beRepaired(1);
 	return (0);
 }

@@ -4,29 +4,33 @@ ScavTrap::ScavTrap(void){
 	this->setHitPoint(100);
 	this->setEnergyPoint(50);
 	this->setAttackDamage(20);
-	std::cout << "default constructor ScavTrap called" << std::endl;
+	std::cout << "Default constructor ScavTrap called" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name): ClapTrap(name){
 	this->setHitPoint(100);
 	this->setEnergyPoint(50);
 	this->setAttackDamage(20);
-	std::cout << "Constructor string Scavtrap called" << std::endl;
+	std::cout << "String constructor Scavtrap called" << std::endl;
 } 
 
 ScavTrap::~ScavTrap(void){
-	std::cout << "Destructor ScavTrap called" << std::endl;
+	std::cout << " Default destructor ScavTrap called" << std::endl;
 }
 
 ScavTrap::ScavTrap(ScavTrap const & st){
-	*this = st;
+	std::cout << "Copy ScavTrap constructor called" <<std::endl;
+	this->setName(st.getName());
+	this->setHitPoint(st.getHitPoint());
+	this->setEnergyPoint(st.getEnergyPoint());
+	this->setAttackDamage(st.getAttackDamage());
 }
 
-ScavTrap &ScavTrap::operator=(ScavTrap const & sp){
-	this->setName(sp.getName());
-	this->setHitPoint(sp.getHitPoint());
-	this->setEnergyPoint(sp.getEnergyPoint());
-	this->setAttackDamage(sp.getAttackDamage());
+ScavTrap &ScavTrap::operator=(ScavTrap const & st){
+	this->setName(st.getName());
+	this->setHitPoint(st.getHitPoint());
+	this->setEnergyPoint(st.getEnergyPoint());
+	this->setAttackDamage(st.getAttackDamage());
 	return *this;
 }
 

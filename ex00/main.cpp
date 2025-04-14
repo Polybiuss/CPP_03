@@ -1,11 +1,12 @@
 #include "ClapTrap.hpp"
 
 int main(void){
-	ClapTrap clptp("CL4PTP");
+	ClapTrap clptp;
 	clptp.attack("Jack");
 	clptp.takeDamage(11);
-	clptp.attack("jack");
-	clptp.beRepaired(2);
-	clptp.takeDamage(1);
+	ClapTrap c1 = clptp;
+	c1.attack("jack");
+	c1.beRepaired(2);
+	c1.takeDamage(1);
 	return (0);
 }
